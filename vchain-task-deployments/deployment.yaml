@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: task-deploy
+  labels:
+    app: task-service
+  annotations:
+spec:
+  selector:
+    matchLabels:
+      app: task-service
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: task-service
+    spec:
+      containers:
+      - name: task-service
+        image: vking34/vchain-task-service:ver1.20
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8086
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "80m"
+          limits:
+            memory: "512Mi"
+            cpu: "300m"

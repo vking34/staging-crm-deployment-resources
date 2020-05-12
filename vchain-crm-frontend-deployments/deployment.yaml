@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: crm-frontend-deploy
+  labels:
+    app: crm-frontend
+  annotations:
+spec:
+  selector:
+    matchLabels:
+      app: crm-frontend
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: crm-frontend
+    spec:
+      containers:
+      - name: crm-frontend
+        image: vking34/vchain-crm-frontend:v1.4
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "300m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"

@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    configuration.konghq.com: strip-path
+  name: analysis-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /api/analysis
+        backend:
+          serviceName: analysis-service
+          servicePort: 8084

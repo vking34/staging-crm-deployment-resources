@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: task-service
-        image: vking34/vchain-task-service:ver1.20
+        image: vking34/vchain-task-service:58e32b7
         imagePullPolicy: Always
         ports:
         - containerPort: 8086

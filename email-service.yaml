@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: email-service
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/vking34/crm-deployment-resouces.git
+    targetRevision: HEAD
+    path: vchain-email-deployments/
+    directory:
+      recurse: true
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: ms
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false

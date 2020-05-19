@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    configuration.konghq.com: strip-path
+  name: campaign-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /api/campaigns
+        backend:
+          serviceName: campaign-service
+          servicePort: 8088

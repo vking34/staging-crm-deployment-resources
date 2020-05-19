@@ -1,14 +1,14 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: analysis-deploy
+  name: campaign-deploy
   labels:
-    app: analysis-service
+    app: campaign-service
   annotations:
 spec:
   selector:
     matchLabels:
-      app: analysis-service
+      app: campaign-service
   replicas: 2
   strategy:
     type: RollingUpdate
@@ -18,14 +18,14 @@ spec:
   template:
     metadata:
       labels:
-        app: analysis-service
+        app: campaign-service
     spec:
       containers:
-      - name: analysis-service
-        image: vking34/vchain-analysis-service:ver1.61
+      - name: campaign-service
+        image: vking34/vchain-campaign-service:v1.2
         imagePullPolicy: Always
         ports:
-        - containerPort: 8084
+        - containerPort: 8088
         resources:
           requests:
             memory: "256Mi"

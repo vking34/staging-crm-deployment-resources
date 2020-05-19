@@ -1,14 +1,14 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: campaign-deploy
+  name: email-deploy
   labels:
-    app: campaign-service
+    app: email-service
   annotations:
 spec:
   selector:
     matchLabels:
-      app: campaign-service
+      app: email-service
   replicas: 2
   strategy:
     type: RollingUpdate
@@ -18,11 +18,11 @@ spec:
   template:
     metadata:
       labels:
-        app: campaign-service
+        app: email-service
     spec:
       containers:
-      - name: campaign-service
-        image: vking34/vchain-campaign-service:v1.2
+      - name: email-service
+        image: vking34/vchain-email-service:v1.2
         imagePullPolicy: Always
         ports:
         - containerPort: 50051

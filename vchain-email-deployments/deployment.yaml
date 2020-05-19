@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: email-service
-        image: vking34/vchain-email-service:v1.2
+        image: vking34/vchain-email-service:404ff5e
         imagePullPolicy: Always
         ports:
         - containerPort: 50051

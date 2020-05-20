@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: payment-service
-        image: vking34/vchain-payment-service:ver1.41
+        image: vking34/vchain-payment-service:18af06b
         imagePullPolicy: Always
         ports:
         - containerPort: 8082

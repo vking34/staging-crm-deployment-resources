@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: crm-frontend
-        image: vking34/vchain-crm-frontend:v1.5
+        image: vking34/vchain-crm-frontend:a7a63e8
         imagePullPolicy: Always
         ports:
         - containerPort: 80

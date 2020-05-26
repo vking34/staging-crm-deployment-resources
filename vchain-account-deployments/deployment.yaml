@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: account-service
-        image: vking34/vchain-account-service:3cea829
+        image: vking34/vchain-account-service:f188b01
         imagePullPolicy: Always
         ports:
         - containerPort: 8080

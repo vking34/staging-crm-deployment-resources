@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: analysis-service
-        image: vking34/vchain-analysis-service:2dabc1b
+        image: vking34/vchain-analysis-service:68b6050
         imagePullPolicy: Always
         ports:
         - containerPort: 8084

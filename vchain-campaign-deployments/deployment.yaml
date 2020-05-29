@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: campaign-service
-        image: vking34/vchain-campaign-service:4f1ab7d
+        image: vking34/vchain-campaign-service:1452fe8
         imagePullPolicy: Always
         ports:
         - containerPort: 8088

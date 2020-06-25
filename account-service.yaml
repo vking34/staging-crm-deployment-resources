@@ -2,11 +2,11 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: account-service
-  namespace: argocd
+  namespace: cd
 spec:
   project: default
   source:
-    repoURL: https://github.com/vking34/crm-deployment-resouces.git
+    repoURL: https://github.com/vking34/crm-deployment-resources.git
     targetRevision: HEAD
     path: vchain-account-deployments/
     directory:
